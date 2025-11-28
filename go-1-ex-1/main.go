@@ -5,8 +5,8 @@ import "fmt"
 func main() {
 	// TODO: Declare and initialize the variables being used in the output!
 	var firstName string = "Ryan"
-	var lastName string = "Trut"
-	var dayOfBirth int = 26
+	lastName := "Trut"
+	var dayOfBirth = 26
 	var monthOfBirth int = 12
 	var yearOfBirth int = 2008
 	var numberOfSiblings int = 4
