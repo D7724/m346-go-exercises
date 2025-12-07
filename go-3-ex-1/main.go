@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const (
 	Aries       = '\u2648' // Widder
@@ -21,6 +23,33 @@ func outputWithZodiacSign(p Person) {
 	var zodiacSign rune = '?'
 
 	// TODO: Assign proper value to zodiacSign using if/else branching.
+
+	if (p.Day >= 23 && p.Month == 11) || (p.Day <= 22 && p.Month == 12) {
+		zodiacSign = Sagittarius
+	} else if (p.Day >= 24 && p.Month == 10) || (p.Day <= 23 && p.Month == 11) {
+		zodiacSign = Scorpius
+	} else if (p.Day >= 24 && p.Month == 9) || (p.Day <= 24 && p.Month == 10) {
+		zodiacSign = Libra
+	} else if (p.Day >= 24 && p.Month == 8) || (p.Day <= 24 && p.Month == 9) {
+		zodiacSign = Virgo
+	} else if (p.Day >= 24 && p.Month == 7) || (p.Day <= 24 && p.Month == 8) {
+		zodiacSign = Leo
+	} else if (p.Day >= 22 && p.Month == 6) || (p.Day <= 24 && p.Month == 7) {
+		zodiacSign = Cancer
+	} else if (p.Day >= 22 && p.Month == 5) || (p.Day <= 22 && p.Month == 6) {
+		zodiacSign = Gemini
+	} else if (p.Day >= 21 && p.Month == 4) || (p.Day <= 22 && p.Month == 5) {
+		zodiacSign = Taurus
+	} else if (p.Day >= 21 && p.Month == 3) || (p.Day <= 21 && p.Month == 4) {
+		zodiacSign = Aries
+	} else if (p.Day >= 20 && p.Month == 2) || (p.Day <= 21 && p.Month == 3) {
+		zodiacSign = Pisces
+	} else if (p.Day >= 21 && p.Month == 1) || (p.Day <= 20 && p.Month == 2) {
+		zodiacSign = Aquarius
+	} else if (p.Day >= 22 && p.Month == 12) || (p.Day <= 21 && p.Month == 1) {
+		zodiacSign = Capricornus
+	}
+
 	// NOTE: The runes are defined above as constants.
 
 	fmt.Printf("%s %s, born on %02d.%02d.%04d, has the zodiac sign %c.\n",
@@ -48,10 +77,12 @@ func main() {
 	rick := Person{FullName{"Rick", "Astley"}, BirthDate{6, 2, 1966}}
 	edsger := Person{FullName{"Edsger", "Dijkstra"}, BirthDate{11, 5, 1930}}
 	alan := Person{FullName{"Alan", "Turing"}, BirthDate{23, 6, 1912}}
+	edgar := Person{FullName{"Edgar", "Ambauen"}, BirthDate{24, 12, 1912}}
 
 	outputWithZodiacSign(grace)
 	outputWithZodiacSign(dennis)
 	outputWithZodiacSign(rick)
 	outputWithZodiacSign(edsger)
 	outputWithZodiacSign(alan)
+	outputWithZodiacSign(edgar)
 }
